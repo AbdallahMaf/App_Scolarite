@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Page d'Inscription</title>
 </head>
-
+ 
 <body>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -22,11 +22,11 @@
             <input type="email" name="email" id="email" placeholder="Votre Email" required>
             <input type="password" name="password" id="password" placeholder="Votre Mot de Passe" required>
             <input type="submit" value="Se Connecter">
-            <a href="/webapp/WEB-INF/inscription.jsp">Inscrivez-vous ici...</a>
+            <a href="/webapp/inscription.jsp">Inscrivez-vous ici...</a>
 
             <div class="drops">
-                <div class="drop drop-1"></div>
-                <div class="drop drop-2"></div>
+                <div class="dr0op drop-1"></div>
+                <div class="d rop drop-2"></div>
                 <div class="drop drop-3"></div>
                 <div class="drop drop-4"></div>
                 <div class="drop drop-5"></div>

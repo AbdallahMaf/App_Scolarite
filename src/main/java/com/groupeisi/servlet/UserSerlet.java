@@ -35,7 +35,7 @@ public class UserSerlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/index.jsp");
 		dispatcher.forward(request, response);
 	}
 

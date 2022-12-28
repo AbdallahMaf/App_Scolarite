@@ -23,7 +23,7 @@ public class UserDaoImpl {
             Object var5 = null;
 
             try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/scolarite_db?useSSL=false", "root", "root");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/scolarite_db?useSSL=false", "root", "");
 
                 try {
                     PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
