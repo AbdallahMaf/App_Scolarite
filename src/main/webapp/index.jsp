@@ -22,7 +22,7 @@
             <input type="email" name="email" id="email" placeholder="Votre Email" required>
             <input type="password" name="password" id="password" placeholder="Votre Mot de Passe" required>
             <input type="submit" value="Se Connecter">
-            <a href="/webapp/inscription.jsp">Inscrivez-vous ici...</a>
+            <a href="inscription.jsp">Inscrivez-vous ici...</a>
 
             <div class="drops">
                 <div class="dr0op drop-1"></div>
