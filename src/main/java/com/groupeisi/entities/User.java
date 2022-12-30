@@ -7,7 +7,7 @@ public class User implements Serializable {
 	private int id;
 	private String firstname;
 	private String lastname;
-	private String email;   
+	private String email;    
 	private String password;
 
 	public int getId() {
