@@ -3,6 +3,7 @@ package com.groupeisi.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
 
@@ -10,7 +11,42 @@ import com.groupeisi.entities.User;
 
 
 public class UserDaoImpl {
-    public UserDaoImpl() {
+	
+	private PreparedStatement pstm;
+	private ResultSet rs;
+	private Connection cnx;
+	private int result;
+
+	
+	//Connexion DB
+	public void openConnection() {
+		String userMysql = "root";
+		String passwordMysql = "";
+		String url = "jdbc:mysql://localhost:3306/scolaritedb";
+		String dbDriver = "com.mysql.cj.jdbc.Driver";
+		
+		try {
+			//chargement du pilote
+			Class.forName("com.mysql.jdbc.Driver") ;
+			cnx = DriverManager.getConnection(url, userMysql, passwordMysql);
+			System.out.println("SUCCESS");
+		}catch(Exception ex){
+			ex.printStackTrace() ;
+		}
+	}
+	
+	public void closeConnection() {
+		try {
+			if(cnx != null) {
+				cnx.close();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	
+    /*public UserDaoImpl() {
     }
 
     public int registerEmployee(User user) throws Throwable {
@@ -97,5 +133,5 @@ public class UserDaoImpl {
                 System.out.println("Cause: " + t);
             }
         }
-    }
+    }*/
 }

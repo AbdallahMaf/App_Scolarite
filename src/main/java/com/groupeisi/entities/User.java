@@ -10,6 +10,22 @@ public class User implements Serializable {
 	private String email;    
 	private String password;
 
+	
+	public User() {
+		super();
+	}
+	
+	
+	public User(int id, String firstname, String lastname, String email, String password) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
+	}
+
+
 	public int getId() {
 		return id;
 	}
