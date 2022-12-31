@@ -19,7 +19,7 @@ public class UserDaoImpl {
 
 	
 	//Connexion DB
-	public void openConnection() {
+	public Connection openConnection() {
 		String userMysql = "root";
 		String passwordMysql = "";
 		String url = "jdbc:mysql://localhost:3306/scolaritedb";
@@ -27,12 +27,13 @@ public class UserDaoImpl {
 		
 		try {
 			//chargement du pilote
-			Class.forName("com.mysql.jdbc.Driver") ;
+			Class.forName(dbDriver) ;
 			cnx = DriverManager.getConnection(url, userMysql, passwordMysql);
 			System.out.println("SUCCESS");
 		}catch(Exception ex){
 			ex.printStackTrace() ;
 		}
+		return cnx;
 	}
 	
 	public void closeConnection() {
@@ -45,9 +46,28 @@ public class UserDaoImpl {
 		}
 	}
 
-	public void insert(User user) {
-		// TODO Auto-generated method stub
+	public String insert(User user) {
 		
+		Connection cnx = openConnection();
+        String INSERT_USERS_SQL = "INSERT INTO user VALUES  (?, ?, ?, ?, ?);";
+        String result = "Connection Successfully";
+        
+        	PreparedStatement pstm;
+
+            try {
+            	pstm = cnx.prepareStatement(INSERT_USERS_SQL);
+            	pstm .setInt(1, 1);
+            	pstm .setString(2, user.getLastname());
+            	pstm .setString(3, user.getLastname());
+            	pstm .setString(4, user.getEmail());
+            	pstm.setString(5, user.getPassword());
+                pstm .executeUpdate();
+            } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				result = "Connexion echouée";
+			}
+		return result;
 	}
 	
 	
