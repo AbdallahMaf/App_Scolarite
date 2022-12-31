@@ -55,7 +55,8 @@ public class UserSerlet extends HttpServlet {
 		user.setPassword(password);
 		
 		UserDaoImpl userDao = new UserDaoImpl();
-		userDao.insert(user); 
+		String result = userDao.insert(user); 
+		response.getWriter().print(result);
 		
 		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/Userdetails.jsp");
 		dispatcher.forward(request, response);*/
