@@ -35,8 +35,8 @@ public class UserSerlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/index.jsp");
-		dispatcher.forward(request, response);
+		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/index.jsp");
+		dispatcher.forward(request, response);*/
 	}
 
 	/**
@@ -54,8 +54,11 @@ public class UserSerlet extends HttpServlet {
 		user.setEmail(email);
 		user.setPassword(password);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/Userdetails.jsp");
-		dispatcher.forward(request, response);
+		UserDaoImpl userDao = new UserDaoImpl();
+		userDao.insert(user); 
+		
+		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/Userdetails.jsp");
+		dispatcher.forward(request, response);*/
 	}
 
 }

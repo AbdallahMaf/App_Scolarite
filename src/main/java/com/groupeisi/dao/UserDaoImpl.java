@@ -44,6 +44,11 @@ public class UserDaoImpl {
 			// TODO: handle exception
 		}
 	}
+
+	public void insert(User user) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
     /*public UserDaoImpl() {
