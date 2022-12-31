@@ -1,6 +1,5 @@
 package com.groupeisi.servlet;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,8 +16,6 @@ import com.groupeisi.entities.User;
 @WebServlet("/user")
 public class UserSerlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private UserDaoImpl userdaoimpl = new UserDaoImpl();
        
     /**
      * @see HttpServlet#HttpServlet() 
@@ -48,11 +45,7 @@ public class UserSerlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		User user = new User();
-		user.setFirstname(firstname);
-		user.setLastname(lastname);
-		user.setEmail(email);
-		user.setPassword(password);
+		User user = new User(0, firstname, lastname, email, password);
 		
 		UserDaoImpl userDao = new UserDaoImpl();
 		String result = userDao.insert(user); 

@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
     <div class="container">
-        <form action="<%= request.getContextPath() %>/user" method="post">
+        <form action="UserSerlet" method="post">
             <p>Connectez-vous</p>
             <input type="text" name="firstname" id="firstname" placeholder="Votre Nom" required>
             <input type="text" name="lastname" id="lastname" placeholder="Votre Prenom" required>
