@@ -1,8 +1,6 @@
 package com.groupeisi.entities;
 
-import java.io.Serializable;
-
-public class User implements Serializable {
+public class User {
 
 	private int id;
 	private String firstname;

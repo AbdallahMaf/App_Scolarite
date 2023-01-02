@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Iterator;
+
 
 import com.groupeisi.entities.User;
 
@@ -16,27 +16,29 @@ public class UserDaoImpl {
 	private ResultSet rs;
 	private Connection cnx;
 	private int result;
-
+	
+	String userMysql = "root";
+	String passwordMysql = "";
+	String url = "jdbc:mysql://localhost:3306/scolaritedb";
+	String dbDriver = "com.mysql.cj.jdbc.Driver";
+	
 	
 	//Connexion DB
 	public Connection openConnection() {
-		String userMysql = "root";
-		String passwordMysql = "";
-		String url = "jdbc:mysql://localhost:3306/scolaritedb";
-		String dbDriver = "com.mysql.cj.jdbc.Driver";
 		
+		Connection cnx = null;
 		try {
 			//chargement du pilote
+			
 			Class.forName(dbDriver) ;
 			cnx = DriverManager.getConnection(url, userMysql, passwordMysql);
-			System.out.println("SUCCESS");
 		}catch(Exception ex){
 			ex.printStackTrace() ;
 		}
 		return cnx;
 	}
 	
-	public void closeConnection() {
+	/*public void closeConnection() {
 		try {
 			if(cnx != null) {
 				cnx.close();
@@ -44,7 +46,7 @@ public class UserDaoImpl {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-	}
+	}*/
 
 	public String insert(User user) {
 		

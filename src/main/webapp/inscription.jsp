@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
     <div class="container">
-        <form action="database.php" method="post">
+        <form action="" method="post">
             <p>Bienvenue</p>
            
             <input type="text" name="nom" id="nom" placeholder="Votre Nom" required>
