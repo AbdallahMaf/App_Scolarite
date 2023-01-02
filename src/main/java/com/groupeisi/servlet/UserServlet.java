@@ -7,20 +7,20 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import com.groupeisi.dao.UserDaoImpl;
+import com.groupeisi.dao.UserDoaImpl;
 import com.groupeisi.entities.User;
 
 /**
- * Servlet implementation class UserSerlet
+ * Servlet implementation class UserServlet
  */
-@WebServlet("/UserSerlet")
-public class UserSerlet extends HttpServlet {
+@WebServlet("/UserServlet")
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet() 
+     * @see HttpServlet#HttpServlet()
      */
-    public UserSerlet() {
+    public UserServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,16 +31,15 @@ public class UserSerlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/index.jsp");
-		dispatcher.forward(request, response);*/
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
+
+
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
@@ -48,12 +47,9 @@ public class UserSerlet extends HttpServlet {
 		
 		User user = new User(0, firstname, lastname, email, password);
 		
-		UserDaoImpl userDao = new UserDaoImpl();
+		UserDoaImpl userDao = new UserDoaImpl();
 		String result = userDao.insert(user); 
 		response.getWriter().print(result);
-		
-		/*RequestDispatcher dispatcher = request.getRequestDispatcher("/webapp/Userdetails.jsp");
-		dispatcher.forward(request, response);*/
 	}
 
 }
