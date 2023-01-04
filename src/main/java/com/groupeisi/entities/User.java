@@ -2,7 +2,7 @@ package com.groupeisi.entities;
 
 public class User {
 
-	private int id;
+	//private int id;
 	private String firstname;
 	private String lastname;
 	private String email;    
@@ -14,9 +14,9 @@ public class User {
 	}
 	
 	
-	public User(int id, String firstname, String lastname, String email, String password) {
+	public User(String firstname, String lastname, String email, String password) {
 		super();
-		this.id = id;
+		//this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
@@ -24,12 +24,12 @@ public class User {
 	}
 
 
-	public int getId() {
+	/*public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
+	}*/
 	
 	public String getFirstname() {
 		return firstname;

@@ -37,18 +37,17 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 
-
+		
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		User user = new User(0, firstname, lastname, email, password);
+		User user = new User(firstname, lastname, email, password);
 		
 		UserDoaImpl userDao = new UserDoaImpl();
-		String result = userDao.insert(user); 
+		int result = userDao.create(user); 
 		response.getWriter().print(result);
 	}
 

@@ -13,11 +13,14 @@ public class UserDoaImpl {
 	private ResultSet rs;
 	private Connection cnx;
 	private int result;*/
+	private int result;
 	
 	String userMysql = "root";
 	String passwordMysql = "";
-	String url = "jdbc:mysql://localhost:3306/scolaritedb";
+	String url = "jdbc:mysql://localhost:3306/scolariteweb";
 	String dbDriver = "com.mysql.cj.jdbc.Driver";
+	
+	
 	
 	public void loadDriver(String dbdriver) {
 		try {	
@@ -38,30 +41,31 @@ public class UserDoaImpl {
 		return cnx;
 	}
 	
-	public String insert(User user) {
-			
+	public int create(User user) {
+		result = 0;
 			loadDriver(dbDriver);
 			Connection cnx = getConnection();
-	        String INSERT_USERS_SQL = "INSERT INTO user VALUES  (?, ?, ?, ?, ?);";
-	        String result = "Connection Successfully";
+	        //String result = "Connection Successfully";
+	        String INSERT_USERS_SQL = "INSERT INTO user VALUES  (?, ?, ?, ?)";
 	        
 	        	PreparedStatement pstm;
 	
 	            try {
 	            	pstm = cnx.prepareStatement(INSERT_USERS_SQL);
-	            	pstm .setInt(1, 1);
-	            	pstm .setString(2, user.getFirstname());
-	            	pstm .setString(3, user.getLastname());
-	            	pstm .setString(4, user.getEmail());
-	            	pstm.setString(5, user.getPassword());
-	                pstm .executeUpdate();
+	            	//pstm.setInt(1, 1);
+	            	pstm.setString(1, user.getFirstname());
+	            	pstm.setString(2, user.getLastname());
+	            	pstm.setString(3, user.getEmail());
+	            	pstm.setString(4, user.getPassword());
+	                pstm.executeUpdate();
 	            } catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					result = "Connexion echouée";
+					//result = "Connexion echouée";
 				}
 			return result;
 		}
+	
 	
 	
 	//Connexion DB
