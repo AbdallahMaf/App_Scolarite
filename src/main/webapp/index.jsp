@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
     <div class="container">
-        <form action="UserServlet" method="post">
+        <form action="userservlet" method="post">
             <p>Connectez-vous</p>
             <input type="text" name="firstname" id="firstname" placeholder="Votre Nom" required>
             <input type="text" name="lastname" id="lastname" placeholder="Votre Prenom" required>

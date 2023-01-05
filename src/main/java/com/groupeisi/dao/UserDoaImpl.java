@@ -17,7 +17,9 @@ public class UserDoaImpl {
 	
 	String userMysql = "root";
 	String passwordMysql = "";
-	String url = "jdbc:mysql://localhost:3306/scolariteweb";
+	String url = "jdbc:mysql://localhost:3306/scolariteweb?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+	
+
 	String dbDriver = "com.mysql.cj.jdbc.Driver";
 	
 	
@@ -46,7 +48,7 @@ public class UserDoaImpl {
 			loadDriver(dbDriver);
 			Connection cnx = getConnection();
 	        //String result = "Connection Successfully";
-	        String INSERT_USERS_SQL = "INSERT INTO user VALUES  (?, ?, ?, ?)";
+	        String INSERT_USERS_SQL = "INSERT INTO user (firstname,lastname,email,password) VALUES  (?, ?, ?, ?)";
 	        
 	        	PreparedStatement pstm;
 	
