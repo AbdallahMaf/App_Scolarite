@@ -43,11 +43,11 @@ public class UserDoaImpl {
 		return cnx;
 	}
 	
-	public int create(User user) {
-		result = 0;
+	public String create(User user) {
+		//result = 0;
 			loadDriver(dbDriver);
 			Connection cnx = getConnection();
-	        //String result = "Connection Successfully";
+	        String result = "Connection Successfully";
 	        String INSERT_USERS_SQL = "INSERT INTO user (firstname,lastname,email,password) VALUES  (?, ?, ?, ?)";
 	        
 	        	PreparedStatement pstm;
@@ -63,7 +63,7 @@ public class UserDoaImpl {
 	            } catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-					//result = "Connexion echouée";
+					result = "Connexion echouée";
 				}
 			return result;
 		}

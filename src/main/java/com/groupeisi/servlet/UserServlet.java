@@ -29,7 +29,7 @@ public class UserServlet extends HttpServlet {
 		User user = new User(firstname, lastname, email, password);
 		
 		UserDoaImpl userDao = new UserDoaImpl();
-		int result = userDao.create(user); 
+		String result = userDao.create(user); 
 		response.getWriter().print(result);
 	}
 
