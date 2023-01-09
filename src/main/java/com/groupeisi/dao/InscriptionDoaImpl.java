@@ -36,7 +36,7 @@ public class InscriptionDoaImpl {
 	public String create(Inscription inscription) {
 		loadDriver(dbDriver);
 		Connection cnx = getConnection();
-        String result = "Connection Successfully";
+        String result = "Inscription Successfully";
         String INSERT_INSCRIPTION_SQL = "INSERT INTO inscription (nom,prenom,email,date,classe) VALUES  (?, ?, ?, ?, ?)";
 		
         try {
@@ -52,7 +52,7 @@ public class InscriptionDoaImpl {
                 pstm.executeUpdate();
             } catch (SQLException e) {
 				e.printStackTrace();
-				result = "Connexion echouée";
+				result = "Inscription echouée";
 			}
 		return result;
 
