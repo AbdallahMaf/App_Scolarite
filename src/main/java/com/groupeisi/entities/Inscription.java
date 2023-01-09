@@ -8,7 +8,7 @@ public class Inscription {
 	private String nom;
 	private String prenom;
 	private String email;
-	private Date date;
+	private String date;
 	private String classe;
 	
 	public Inscription() {
@@ -16,7 +16,7 @@ public class Inscription {
 	}
 	
 	//Constructor
-	public Inscription(String id, String nom, String prenom, String email, Date date, String classe) {
+	public Inscription(String id, String nom, String prenom, String email, String date, String classe) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -54,10 +54,10 @@ public class Inscription {
 		this.email = email;
 	}
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
