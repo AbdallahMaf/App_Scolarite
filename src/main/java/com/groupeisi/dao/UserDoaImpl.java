@@ -1,4 +1,4 @@
-package com.groupeisi.dao;
+ package com.groupeisi.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,16 +12,13 @@ public class UserDoaImpl {
 	/*private PreparedStatement pstm;
 	private ResultSet rs;
 	private Connection cnx;
-	private int result;*/
 	private int result;
+	private int result;*/
 	
 	String userMysql = "root";
 	String passwordMysql = "";
 	String url = "jdbc:mysql://localhost:3306/scolariteweb?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-	
-
 	String dbDriver = "com.mysql.cj.jdbc.Driver";
-	
 	
 	
 	public void loadDriver(String dbdriver) {

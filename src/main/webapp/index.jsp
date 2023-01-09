@@ -17,8 +17,8 @@
     <div class="container">
         <form action="userservlet" method="post">
             <p>Connectez-vous</p>
-            <input type="text" name="firstname" id="firstname" placeholder="Votre Nom" required>
-            <input type="text" name="lastname" id="lastname" placeholder="Votre Prenom" required>
+            <input type="text" name="firstname" id="firstname" placeholder="Votre Prenom" required>
+            <input type="text" name="lastname" id="lastname" placeholder="Votre Nom" required>
             <input type="email" name="email" id="email" placeholder="Votre Email" required>
             <input type="password" name="password" id="password" placeholder="Votre Mot de Passe" required>
             <input type="submit" value="Se Connecter">
