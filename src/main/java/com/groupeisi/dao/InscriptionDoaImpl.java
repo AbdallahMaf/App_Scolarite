@@ -2,6 +2,9 @@ package com.groupeisi.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+
+import com.groupeisi.entities.Inscription;
 
 public class InscriptionDoaImpl {
 
@@ -27,5 +30,19 @@ public class InscriptionDoaImpl {
 			e.printStackTrace();
 		}
 		return cnx;
+	}
+	
+	public String create(Inscription inscription) {
+		try {
+			loadDriver(dbDriver);
+			Connection cnx = getConnection();
+	        String result = "Connection Successfully";
+	        String INSERT_INSCRIPTION_SQL = "INSERT INTO inscription (nom,prenom,email,date,classe) VALUES  (?, ?, ?, ?, ?)";
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+		
 	}
 }
