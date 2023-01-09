@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,7 @@
             <input type="date" name="date" id="date" required>
             <input type="text" name="classe" id="classe" placeholder="Votre Classe" required>
             <input type="submit" value="Enregistrer">
-            <a href="index.jsp">Vous avez dej‡ un compte?</a>
+            <a href="index.jsp">Vous avez dej√† un compte?</a>
 
             <div class="drops">
                 <div class="drop drop-1"></div>

@@ -1,6 +1,5 @@
 package com.groupeisi.entities;
 
-import java.sql.Date;
 
 public class Inscription {
 	
@@ -16,9 +15,9 @@ public class Inscription {
 	}
 	
 	//Constructor
-	public Inscription(String id, String nom, String prenom, String email, String date, String classe) {
+	public Inscription(String nom, String prenom, String email, String date, String classe) {
 		super();
-		this.id = id;
+		//this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;

@@ -8,6 +8,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.groupeisi.dao.InscriptionDoaImpl;
+import com.groupeisi.dao.UserDoaImpl;
+import com.groupeisi.entities.Inscription;
+
 /**
  * Servlet implementation class InscriptionServlet
  */
@@ -41,9 +45,21 @@ public class InscriptionServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		String email = request.getParameter("email");
+		String date = request.getParameter("date");
+		String classe = request.getParameter("classe");
+		
+		Inscription inscription = new Inscription(nom, prenom, email, date, classe);
+		
+		InscriptionDoaImpl inscriptionDao = new InscriptionDoaImpl();
+		String result = inscriptionDao.create(inscription); 
+		response.getWriter().print(result);
+		
 	}
 
 }

@@ -3,7 +3,6 @@ package com.groupeisi.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.groupeisi.entities.Inscription;
@@ -49,7 +48,7 @@ public class InscriptionDoaImpl {
             	pstm.setString(2, inscription.getPrenom());
             	pstm.setString(3, inscription.getEmail());
             	pstm.setDate(4, java.sql.Date.valueOf(inscription.getDate()));
-            	pstm.setString(4, inscription.getClasse());
+            	pstm.setString(5, inscription.getClasse());
                 pstm.executeUpdate();
             } catch (SQLException e) {
 				e.printStackTrace();
